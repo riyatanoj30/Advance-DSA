@@ -1,12 +1,10 @@
 import java.util.Scanner;
-
 public class Worst_case {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
         System.out.print("Enter your age: ");
         int age = scanner.nextInt();
-       
+        long startTime = System.nanoTime();
         switch (age) {
             case 0:
                 System.out.println("Age cannot be zero");
@@ -65,7 +63,9 @@ public class Worst_case {
             default:
                 System.out.println("You are eligible to vote");
         }
-
         scanner.close();
+        long endTime = System.nanoTime();
+        double elapsedTimeInSeconds = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("Execution time: " + elapsedTimeInSeconds + " seconds");
     }
 }

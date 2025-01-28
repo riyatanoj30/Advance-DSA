@@ -9,6 +9,7 @@ public class Average_case {
             System.out.print("Enter age for person " + (i + 1) + ": ");
             ages[i] = scanner.nextInt();
         }
+        long startTime = System.nanoTime();
         for (int age : ages) {
             if (age >= 18) {
                 System.out.println("Eligible to vote.");
@@ -17,5 +18,8 @@ public class Average_case {
             }
         }
         scanner.close();
+        long endTime = System.nanoTime();
+        double elapsedTimeInSeconds = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("Execution time: " + elapsedTimeInSeconds + " seconds");
     }
 }
